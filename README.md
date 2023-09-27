@@ -75,8 +75,11 @@ Para criar uma rede pública. Em uma rede pública, sua máquina virtual recebe 
 Podemos subir  nossa VM com algumas automações, podemos, por exemplo, construir scripts ".sh" para serem executados, já podendo subir a VM com aplicativos instalados ou demais ações.
 
 ```
-config.vm.provision "shell", path: "caminhodoseuscript" 
+config.vm.provision "shell", path: "scripts/atualizar-pacotes.sh"
+config.vm.provision "shell", path: "scripts/instalacao-nginx.sh" 
 ```
 Nessa linha definimos que nosso "provision" será shell, logo apos utilizamos "path" para indicar o caminho do script.
+O Primeiros script, realiza a atualização dos pacotes no linux.
+O segundo, realiza a instalação do Nginx
 
 ⌨️ com ❤️ por [Elias Assunção](https://github.com/Hooligam) 🔥
