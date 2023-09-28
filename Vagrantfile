@@ -18,10 +18,13 @@ Vagrant.configure("2") do |config|
 config.vm.network "forwarded_port", guest: 80, host: 8090
 
 #Definindo um IP publico.
-config.vm.network "public_network", ip: "179.189.41.141"
+config.vm.network "public_network", ip: "239.255.255.250"
 
 #Automações(scripts).
 config.vm.provision "shell", path: "scripts/atualizar-pacotes.sh"
 config.vm.provision "shell", path: "scripts/instalacao-nginx.sh"
+
+#Sincronizando um site na VM.
+config.vm.synced_folder "Site", "/var/www/html"
 
 end
